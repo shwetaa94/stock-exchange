@@ -12,7 +12,7 @@ export class RedisManager {
       url: process.env.REDIS_URL || 'redis://localhost:6379'
     });
     this.redisClient.connect();
-    this.publisher.createClient();
+    this.publisher = createClient();
     this.publisher.connect();
   }
 
@@ -30,11 +30,11 @@ export class RedisManager {
             this.redisClient.unsubscribe(id)
             resolve(JSON.parse(message))
         } )
-        this.publisher.lpush("messages",JSON.stringify({clientId:id, message}))
+        this.publisher.lPush("messages",JSON.stringify({clientId:id, message}))
     })
   }
 
-  public async getRandomClientId(){
+  public getRandomClientId(){
     return Math.random().toString(36).substring(2,15) + Math.random().toString(36).substring(2,15)
   }
 }
