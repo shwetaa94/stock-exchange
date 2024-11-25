@@ -10,3 +10,7 @@
 
 /engine/node_modules
 /engine/dist
+
+
+/ws/node_modules
+/ws/dist
