@@ -11,6 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.22.0",
-    "prisma": "^5.22.0"
+    "dotenv": "^16.4.5",
+    "pg": "^8.13.1",
+    "prisma": "^5.22.0",
+    "redis": "^4.7.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.10"
   }
 }
